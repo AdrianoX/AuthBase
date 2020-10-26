@@ -5,6 +5,7 @@ const hbs = require('express-handlebars');
 const passport = require('passport');
 const session = require('express-session');
 const passportSetup = require('./config/passport');
+// const passportSetup = require('./config/passport');
 
 const app = express();
 

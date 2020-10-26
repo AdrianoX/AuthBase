@@ -3,11 +3,11 @@ const passport = require('passport');
 const router = express.Router();
 
 router.get('/google',
-  passport.authenticate('google', { scope: ['email', 'profile'] }));
+  passport.authenticate('google', { scope: ['email', 'profile'] }));  // CL ?
 
 router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/user/no-permission' }),
   (req, res) => {
-    res.redirect('/user/logged');
+    res.redirect('/user/logged'); // CL ?>
   }
 );
 
@@ -16,6 +16,7 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
 router.get('/auth.logout', (req, res) => {
     req.logout();
     res.redirect('/');
+    // res.redirect('/');
   });
 
 module.exports = router;
